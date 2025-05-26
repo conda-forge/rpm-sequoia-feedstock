@@ -13,7 +13,7 @@ source:
 
 build:
   number: 0
-  skip: not linux
+  skip: not unix
   script:
     - export LIBCLANG_PATH=$BUILD_PREFIX/lib
     - cargo build --release
