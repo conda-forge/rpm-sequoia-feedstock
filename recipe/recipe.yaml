@@ -18,8 +18,8 @@ build:
     - export LIBCLANG_PATH=$BUILD_PREFIX/lib
     - cargo build --release
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
-    - install -Dm644 target/x86_64-unknown-linux-gnu/release/librpm_sequoia.so "${PREFIX}/lib/librpm_sequoia.so.1"
-    - ln -s librpm_sequoia.so.1 "${PREFIX}/lib/librpm_sequoia.so"
+    - install -Dm644 target/*/release/librpm_sequoia$SHLIB_EXT "${PREFIX}/lib/librpm_sequoia${SHLIB_EXT}.1"
+    - ln -s librpm_sequoia${SHLIB_EXT}.1 "${PREFIX}/lib/librpm_sequoia${SHLIB_EXT}"
     - install -Dm644 target/release/rpm-sequoia.pc "${PREFIX}/lib/pkgconfig/rpm-sequoia.pc"
 
 requirements:
